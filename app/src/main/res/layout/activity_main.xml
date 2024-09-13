@@ -7,13 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Bandera en LinearLayout (simulando bandera de Francia) -->
+    <LinearLayout
+        android:id="@+id/flag1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- Franja azul -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:background="#0000FF" />
+
+        <!-- Franja blanca -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF" />
+
+        <!-- Franja roja -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:background="#FF0000" />
+
+    </LinearLayout>
+
+    <!-- Bandera en ConstraintLayout (simulando bandera de Alemania) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/flag1">
+
+        <!-- Franja negra -->
+        <View
+            android:id="@+id/negro"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Franja roja -->
+        <View
+            android:id="@+id/rojo"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#FF0000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/negro" />
+
+        <!-- Franja amarilla -->
+        <View
+            android:id="@+id/amarillo"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rojo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
